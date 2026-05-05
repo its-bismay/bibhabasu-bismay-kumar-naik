@@ -4,6 +4,7 @@ import { AnimatePresence } from 'motion/react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import { LeetcodeDataProvider } from './context/LeetcodeContext';
 
 // Lazy load pages for performance
 const Home = lazy(() => import('./pages/Home'));
@@ -16,7 +17,8 @@ function AnimatedRoutes() {
   const location = useLocation();
   
   return (
-    <AnimatePresence mode="wait">
+    <LeetcodeDataProvider>
+          <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/projects" element={<Projects />} />
@@ -25,6 +27,8 @@ function AnimatedRoutes() {
         <Route path="/about" element={<About />} />
       </Routes>
     </AnimatePresence>
+
+    </LeetcodeDataProvider>
   );
 }
 
