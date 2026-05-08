@@ -228,18 +228,17 @@ export default function Home() {
 									<ArrowRight className="w-4 h-4 text-zinc-600 group-hover:text-primary transition-colors" />
 								</div>
 								<h4 className="text-xl font-bold mb-2">
-									Nexus Cloud Storage
+									React Native mobile application
 								</h4>
 								<p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-									Building a decentralized encrypted storage
-									solution.
+									A real-estate maagement system based on react native.  
 								</p>
 								<div className="flex gap-2">
 									<span className="text-[10px] font-mono bg-zinc-950/50 px-2 py-1 rounded-md border border-border">
-										Rust
+										React Native
 									</span>
 									<span className="text-[10px] font-mono bg-zinc-950/50 px-2 py-1 rounded-md border border-border">
-										React
+										TypeScript
 									</span>
 								</div>
 							</motion.div>
