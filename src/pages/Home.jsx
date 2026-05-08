@@ -231,7 +231,7 @@ export default function Home() {
 									React Native mobile application
 								</h4>
 								<p className="text-sm text-muted-foreground line-clamp-2 mb-4">
-									A real-estate maagement system based on react native.  
+									A real-estate maagement system based on react native and supabase.
 								</p>
 								<div className="flex gap-2">
 									<span className="text-[10px] font-mono bg-zinc-950/50 px-2 py-1 rounded-md border border-border">
@@ -326,37 +326,6 @@ export default function Home() {
 					</h2>
 				</div>
 
-				{/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-					{portfolioData.achievements.map((item) => (
-						<motion.div
-							key={item.id}
-							whileHover={{ y: -5 }}
-							transition={{ type: "spring", stiffness: 300 }}
-						>
-							<Card className="bg-muted/10 border-border/50 overflow-hidden relative group">
-								<div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
-									<Newspaper className="w-24 h-24 rotate-12" />
-								</div>
-								<CardContent className="p-8">
-									<div className="flex justify-between items-start mb-4">
-										<Badge variant="secondary">
-											{item.category}
-										</Badge>
-										<span className="text-xs font-mono text-muted-foreground">
-											{item.date}
-										</span>
-									</div>
-									<h3 className="text-xl font-bold mb-2">
-										{item.title}
-									</h3>
-									<p className="text-muted-foreground text-sm leading-relaxed">
-										{item.description}
-									</p>
-								</CardContent>
-							</Card>
-						</motion.div>
-					))}
-				</div> */}
 				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
   {portfolioData.achievements.map((item) => (
     <motion.div
