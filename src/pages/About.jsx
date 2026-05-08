@@ -19,9 +19,9 @@ export default function About() {
       {/* Bio / Intro */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="space-y-8">
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter">BORN TO<br/>BUILD.</h1>
+          <h1 className="text-6xl md:text-8xl font-black tracking-tighter">BUILT FOR<br/>THE WEB.</h1>
           <p className="text-2xl text-muted-foreground leading-relaxed">
-            I'm a self-taught engineer obsessed with performance, security, and the intersection of AI and Web.
+            Self-taught engineer driven by curiosity, clean code, and real-world problem solving.
           </p>
           <div className="flex gap-8 text-sm font-medium">
             <div className="flex items-center gap-2"><MapPinCheck size={18} className="text-primary"/>India, Jamshedpur</div>
@@ -30,11 +30,11 @@ export default function About() {
         </div>
         <div className="relative aspect-square md:aspect-video rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
           <img 
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop" 
+            src="/profile.webp" 
             className="w-full h-full object-cover" 
             alt="Profile" 
           />
-          <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" />
+          <div className="absolute inset-0 bg-primary/20 mix-blend-overlay" /> 
         </div>
       </section>
 

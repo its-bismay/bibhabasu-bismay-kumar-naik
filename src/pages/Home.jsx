@@ -171,7 +171,7 @@ export default function Home() {
 										</p>
 									</div>
 									<div className="font-mono bg-zinc-950/50 px-2.5 py-1 rounded-lg border border-border text-[10px] text-green-400">
-										Top 5%
+										{data?.contest?.top_percentage ? `Top ${data.contest.top_percentage}%` : "Top 0%"}
 									</div>
 								</div>
 
@@ -186,18 +186,18 @@ export default function Home() {
 									</div>
 									<div className="text-center">
 										<div className="text-2xl font-bold font-mono text-orange-400">
-											124
+											{data?.contest?.rating || "none"}
 										</div>
 										<div className="text-[10px] uppercase text-muted-foreground font-bold">
-											Streak
+											Rating
 										</div>
 									</div>
 									<div className="text-center">
 										<div className="text-2xl font-bold font-mono text-primary">
-											1985
+											{data?.contest?.global_ranking || "none"}
 										</div>
 										<div className="text-[10px] uppercase text-muted-foreground font-bold">
-											Rating
+											Global ranking
 										</div>
 									</div>
 								</div>
@@ -327,7 +327,7 @@ export default function Home() {
 					</h2>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+				{/* <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 					{portfolioData.achievements.map((item) => (
 						<motion.div
 							key={item.id}
@@ -357,7 +357,42 @@ export default function Home() {
 							</Card>
 						</motion.div>
 					))}
-				</div>
+				</div> */}
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+  {portfolioData.achievements.map((item) => (
+    <motion.div
+      key={item.id}
+      whileHover={{ y: -5 }}
+      transition={{ type: "spring", stiffness: 300 }}
+      className="h-full"
+    >
+      
+        <a href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block h-full no-underline"
+      >
+        <Card className="bg-muted/10 border-border/50 overflow-hidden relative group h-full flex flex-col">
+          <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+            <Newspaper className="w-24 h-24 rotate-12" />
+          </div>
+          <CardContent className="p-8 flex flex-col flex-1">
+            <div className="flex justify-between items-start mb-4">
+              <Badge variant="secondary">{item.category}</Badge>
+              <span className="text-xs font-mono text-muted-foreground">
+                {item.date}
+              </span>
+            </div>
+            <h3 className="text-xl font-bold mb-2">{item.title}</h3>
+            <p className="text-muted-foreground text-sm leading-relaxed mt-auto">
+              {item.description}
+            </p>
+          </CardContent>
+        </Card>
+      </a>
+    </motion.div>
+  ))}
+</div>
 			</section>
 		</motion.div>
 	);

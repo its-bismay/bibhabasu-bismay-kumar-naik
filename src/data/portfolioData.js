@@ -11,79 +11,80 @@ export const portfolioData = {
   skills: [
     { name: "React", icon: "Code2" },
     { name: "Next.js", icon: "Zap" },
-    { name: "TypeScript", icon: "FileJson" },
+    { name: "JavaScript", icon: "FileJson" },
     { name: "Tailwind CSS", icon: "Palette" },
     { name: "Node.js", icon: "Server" },
     { name: "PostgreSQL", icon: "Database" },
     { name: "Python", icon: "Cpu" },
-    { name: "AWS", icon: "Cloud" }
   ],
   achievements: [
     {
       id: 1,
-      title: "Winner of Global FinTech Hackathon",
-      date: "Oct 2025",
-      description: "Developed a cross-border payment solution using blockchain.",
-      category: "Hackathon"
+      title: "Winner of HACK HORIZON 2.0",
+      date: "Apr 2026",
+      description: "Developed RAG based webapp to simplify and streamline government policies and queries.",
+      category: "Hackathon",
+      link:"https://www.linkedin.com/posts/bismay-kumar_buildinpublic-hackathonexperience-learnbybuilding-ugcPost-7449052352881381376-PCJe/"
     },
     {
       id: 2,
-      title: "AWS Certified Solutions Architect",
-      date: "Jan 2026",
-      description: "Validation of expertise in designing distributed systems.",
-      category: "Certification"
+      title: "Programming Foundations",
+      date: "Jun 2024",
+      description: "Programming Foundations: Beyond the Fundamentals by LinkedIn",
+      category: "Certification",
+      link:"https://www.linkedin.com/learning/certificates/708321ad10bc94a387c3a6f4555a238323e72c57275948cd503a57da537da032/"
     }
   ],
   projects: [
     {
-      id: "nexus-cloud",
-      slug: "nexus-cloud",
-      title: "Nexus Cloud",
-      shortDescription: "A decentralized storage platform with end-to-end encryption.",
-      description: "Nexus Cloud provides a radical new approach to personal data storage. By utilizing a decentralized network and client-side encryption, it ensures that your data is safe and accessible only by you.",
-      thumbnail: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop",
-      tech: ["React", "Rust", "WebAssembly", "IPFS"],
-      liveUrl: "https://nexus-cloud.demo",
-      githubUrl: "https://github.com/bismay/nexus-cloud",
+      id: "repolense",
+      slug: "repolense",
+      title: "Repolense AI",
+      shortDescription: "A webapp to visualize and analyse GitHub repositories.",
+      description: "RepoLens is an interactive GitHub repository visualizer and AI-powered code explainer. It helps you explore, analyze, and understand any public GitHub repository using a force-directed graph, interactive file tree, and AI-generated explanations for the project and its files.",
+      thumbnail: "/repolense.jpg",
+      tech: ["React", "Express", "Javascript", "D3.js"],
+      liveUrl: "https://repolense-frontend.vercel.app",
+      githubUrl: "https://github.com/its-bismay/repolense",
       timeline: [
-        { phase: "Research", date: "Sep 2025" },
-        { phase: "Prototyping", date: "Oct 2025" },
-        { phase: "Alpha Release", date: "Dec 2025" }
+        { phase: "Research", date: "May 2026" },
+        { phase: "Prototyping", date: "May 2026" },
+        { phase: "V1 hosting", date: "May 2026" }
       ],
       features: [
-        "End-to-end PGP encryption",
-        "Decentralized storage via IPFS",
-        "Drag-and-drop file management",
-        "Cross-device synchronization"
+        "Visualize Repository Structure",
+        "AI-Powered Analysis",
+        "File Summaries",
+        "GitHub Integration"
       ],
       readme: `
-# Nexus Cloud
+## **RepoLens AI**
 
-Nexus Cloud is a secure, decentralized storage platform.
+It is an interactive GitHub repository visualizer and AI-powered code explainer. It helps you explore, analyze, and understand any public GitHub repository using a force-directed graph, interactive file tree, and AI-generated explanations for the project and its files.
 
-## key Features
-- **Security First**: Files are encrypted on the client side.
-- **Peer-to-Peer**: No central server controls your data.
-- **Open Source**: Audit the code anytime.
+---
 
-## Tech Stack
-Using React for the UI and Rust/Wasm for the heavy cryptographic lifting.
+- **Visualize Repository Structure:** See the entire file/folder structure as an interactive force-directed graph and file tree.
+- **AI-Powered Analysis:** Get high-level overviews, tech stack, architecture, and key file explanations using Google Gemini AI.
+- **File Summaries:** Click any file to get a detailed, AI-generated summary and explanation.
+- **GitHub Integration:** Fetches real-time data (stars, forks, license, etc.) for any public repo.
+- **Modern UI:** Built with React, Tailwind CSS, D3.js, and Vite for a fast, responsive experience.
       `
     },
     {
-      id: "ai-quant",
-      slug: "ai-quant",
-      title: "AI Quant",
-      shortDescription: "Stock market predictor using Transformer-based models.",
-      description: "AI Quant analyzes historical market data and social sentiment to predict short-term stock movements with high accuracy.",
-      thumbnail: "https://images.unsplash.com/photo-1611974717482-982c7a6944b8?q=80&w=800&auto=format&fit=crop",
-      tech: ["Python", "TensorFlow", "React", "D3.js"],
-      liveUrl: "https://ai-quant.demo",
-      githubUrl: "https://github.com/bismay/ai-quant",
+      id: "leetcode-stats",
+      slug: "leetcode-stats",
+      title: "Leetcode-Stats-Api",
+      shortDescription: "A backend api to fetch Leetcode stats.",
+      description: "A fast, async REST API built with FastAPI that fetches and serves LeetCode user statistics — problems solved, contest ratings, and topic coverage — by querying LeetCode's internal GraphQL API.",
+      thumbnail: "/leetcode-stats-api.jpg",
+      tech: ["Python", "FastAPI", "Uvicorn", "Pydantic"],
+      liveUrl: "https://leetcode-stats-api-five.vercel.app/docs",
+      githubUrl: "https://github.com/its-bismay/leetcode-stats-api",
       timeline: [
-        { phase: "Data Collection", date: "Jan 2026" },
-        { phase: "Model Training", date: "Feb 2026" },
-        { phase: "Deployment", date: "Present" }
+        { phase: "Leetcode Graphql Api research", date: "April 2026" },
+        { phase: "Project setup", date: "May 2026" },
+        { phase: "Deployment", date: "May" }
       ],
       features: [
         "Real-time market sentiment analysis",
@@ -91,7 +92,20 @@ Using React for the UI and Rust/Wasm for the heavy cryptographic lifting.
         "Interactive D3.js visualization",
         "Automated trading signals"
       ],
-      readme: "# AI Quant\nPredicting the future of finance with deep learning."
+      readme: `
+##  **LeetCode Stats API**
+
+A fast, async REST API built with **FastAPI** that fetches and serves LeetCode user statistics — problems solved, contest ratings, and topic coverage — by querying LeetCode's internal GraphQL API.
+
+---
+
+- **Problems Solved** — Total, Easy, Medium, Hard counts
+- **Global Rank** — Overall site ranking
+- **Contest Stats** — Rating, global ranking, top percentage, contests attended
+- **Topics Covered** — All solved tags sorted by count
+- **Parallel Fetching** — Both GraphQL queries fire simultaneously via asyncio.gather
+- **Auto Swagger Docs** — Interactive API docs at /docs
+`
     }
   ],
   about: {
@@ -101,7 +115,8 @@ Using React for the UI and Rust/Wasm for the heavy cryptographic lifting.
       { year: "2026-APRIL", event: "Won National level hackathon", description: "Leading my team, we achieved 2nd place at the national-level Hack Horizon 2.0 hackathon, earning ₹1000 and goodies." }
     ],
     education: [
-      { degree: "B.Tech in Electrical Engineering", school: "National Institute of Technology, Jamshedpur", period: "2023 - 2027" }
+      { degree: "B.Tech in Electrical Engineering", school: "National Institute of Technology, Jamshedpur", period: "2023 - 2027" },
+      {degree: "Higher Secondary Education", school: "Saraswati Vidya Mandir Gatiroutpatna Cuttack", period: "2020 - 2022" }
     ]
   }
 };

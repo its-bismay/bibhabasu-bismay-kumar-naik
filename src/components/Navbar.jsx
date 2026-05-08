@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, Terminal, Github, Linkedin, Twitter } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -50,9 +50,11 @@ export default function Navbar() {
               {link.name}
             </NavLink>
           ))}
-          <Button variant="default" className="rounded-full px-6 bg-primary hover:bg-primary/90 text-black font-bold text-xs uppercase tracking-widest">
+          <Link to={"/about"}>
+                    <Button variant="default" className="rounded-full px-6 bg-primary hover:bg-primary/90 text-black font-bold text-xs uppercase tracking-widest">
             Contact
           </Button>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}

@@ -18,7 +18,7 @@ export default function Projects() {
       <div className="mb-20">
         <h1 className="text-5xl font-black tracking-tighter mb-4">SELECTED WORKS</h1>
         <p className="text-xl text-muted-foreground max-w-2xl">
-          A collection of projects exploring decentralized systems, deep learning, and advanced web architecture.
+          A collection of projects exploring React framework, FastAPI, Gen AI etc.
         </p>
       </div>
 
