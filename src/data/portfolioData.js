@@ -60,50 +60,17 @@ export const portfolioData = {
         "Enterprise-Grade Authentication"
       ],
       readme: `
-# <img src="client/public/favicon.svg" alt="CodeFlow Logo" width="32" align="center" /> CodeFlow
+## **CodeFlow**
 
-> **A production-grade, real-time collaborative workspace** where multiple developers can edit the same files simultaneously with sub-100ms perceived latency, make voice/video calls inside the workspace, and run complex multi-file projects in secure sandboxed microVMs.
-
-[![React](https://img.shields.io/badge/React-18.0-blue.svg)](https://reactjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
-[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248.svg)](https://www.mongodb.com/)
-[![WebRTC](https://img.shields.io/badge/WebRTC-GetStream-blue.svg)](https://getstream.io/)
-[![Yjs](https://img.shields.io/badge/CRDT-Yjs-orange.svg)](https://docs.yjs.dev/)
+A production-grade, real-time collaborative workspace where multiple developers can edit the same files simultaneously with sub-100ms perceived latency, make voice/video calls inside the workspace, and run complex multi-file projects in secure sandboxed microVMs.
 
 ---
 
-## 🚀 Key Features
-
-* **Conflict-Free Real-Time Collaboration**: Powered by **Yjs (CRDTs)**, enabling simultaneous multi-user code editing. Experience seamless offline synchronization and automatic conflict resolution, complete with custom-colored cursor tracking for active collaborators.
-* **Stateful Sandbox Execution**: Integrated with **E2B's Firecracker microVMs**. Instantly spin up dedicated secure virtual environments. Your entire workspace is synced directly to the sandbox container in real-time.
-* **Live Web Server Previews**: Spin up full web apps inside the sandbox (e.g., a FastAPI backend or a Node.js server). CodeFlow automatically forwards the exposed ports and renders the live application directly in an integrated **Live Preview iframe**.
-* **Integrated WebRTC Audio/Video Calling**: Talk while you type. CodeFlow uses the **GetStream.io WebRTC SDK** to provide seamless in-editor video and voice channels. Features include camera toggling, screen sharing, and mute controls.
-* **Enterprise-Grade Authentication**: Implements robust JWT Access and Refresh token rotation, safely stored in HTTP-Only secure cookies to prevent XSS and CSRF attacks.
-
----
-
-## 🧠 System Architecture
-
-CodeFlow employs a robust microservice-oriented architecture designed to handle concurrent WebSocket connections and horizontal scaling.
-
-\`\`\`text
-       [ Vercel Frontend ]
-       React + Monaco Editor
-              │   │
-  REST (Axios)│   │WebSocket (Y-Websocket)
-              ▼   ▼
-       [ Render Backend ]
-       Node.js / Express.js
-              │
-  ┌───────────┼───────────┬───────────┐
-  ▼           ▼           ▼           ▼
-MongoDB     Yjs        Socket.IO     E2B
-Atlas       Sync       Pub/Sub       MicroVM
-(Data)      (CRDT)     (Presence)    (Exec)
-\`\`\`
-
-### Why CRDTs over OT?
-We specifically selected **Yjs (Conflict-free Replicated Data Types)** over Operational Transformation (OT) due to its superior handling of peer-to-peer eventual consistency. CRDTs natively manage offline editing forks without requiring a central server to sequence operations, resulting in lower network overhead and flawless merge resolution.
+- **Conflict-Free Collaboration:** Powered by Yjs (CRDTs) to enable simultaneous multi-user code editing with seamless offline sync and automatic conflict resolution.
+- **Stateful Sandbox Execution:** Integrated with E2B's Firecracker microVMs to instantly spin up dedicated, secure virtual environments that sync your workspace in real-time.
+- **Live Web Server Previews:** Spin up full web apps (like FastAPI or Node.js) inside the sandbox, automatically forwarding exposed ports for live iframe previews.
+- **Integrated WebRTC Calling:** Seamless in-editor video and voice channels powered by GetStream.io WebRTC SDK, allowing you to talk while you type.
+- **Robust Architecture:** Employs a microservice-oriented design handling concurrent WebSocket connections and horizontal scaling via Node.js, Express.js, Socket.IO, and MongoDB.
       `
     },
     {
