@@ -164,14 +164,14 @@ export default function Home() {
 								<div className="flex justify-between items-start">
 									<div>
 										<h3 className="text-sm font-bold uppercase tracking-wider text-primary mb-1">
-											DSA Ranking
+											DSA Progress
 										</h3>
 										<p className="text-xs text-muted-foreground uppercase font-mono">
-											Live Performance
+											Problem Solving
 										</p>
 									</div>
 									<div className="font-mono bg-zinc-950/50 px-2.5 py-1 rounded-lg border border-border text-[10px] text-green-400">
-										{data?.contest?.top_percentage ? `Top ${data.contest.top_percentage}%` : "Top 0%"}
+										Active
 									</div>
 								</div>
 
@@ -186,18 +186,18 @@ export default function Home() {
 									</div>
 									<div className="text-center">
 										<div className="text-2xl font-bold font-mono text-orange-400">
-											{data?.contest?.rating || "none"}
+											{data?.problems?.medium || 0}
 										</div>
 										<div className="text-[10px] uppercase text-muted-foreground font-bold">
-											Rating
+											Medium
 										</div>
 									</div>
 									<div className="text-center">
 										<div className="text-2xl font-bold font-mono text-primary">
-											{data?.contest?.global_ranking || "none"}
+											{data?.problems?.hard || 0}
 										</div>
 										<div className="text-[10px] uppercase text-muted-foreground font-bold">
-											Global ranking
+											Hard
 										</div>
 									</div>
 								</div>

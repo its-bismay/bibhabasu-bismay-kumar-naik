@@ -12,10 +12,11 @@ export const portfolioData = {
     { name: "React", icon: "Code2" },
     { name: "Next.js", icon: "Zap" },
     { name: "JavaScript", icon: "FileJson" },
-    { name: "Tailwind CSS", icon: "Palette" },
     { name: "Node.js", icon: "Server" },
     { name: "PostgreSQL", icon: "Database" },
     { name: "Python", icon: "Cpu" },
+    { name: "FastAPI", icon: "Server" },
+    { name: "MySQL", icon: "Database" },
   ],
   achievements: [
     {
@@ -24,7 +25,7 @@ export const portfolioData = {
       date: "Apr 2026",
       description: "Developed RAG based webapp to simplify and streamline government policies and queries.",
       category: "Hackathon",
-      link:"https://www.linkedin.com/posts/bismay-kumar_buildinpublic-hackathonexperience-learnbybuilding-ugcPost-7449052352881381376-PCJe/"
+      link: "https://www.linkedin.com/posts/bismay-kumar_buildinpublic-hackathonexperience-learnbybuilding-ugcPost-7449052352881381376-PCJe/"
     },
     {
       id: 2,
@@ -32,44 +33,113 @@ export const portfolioData = {
       date: "May 2026",
       description: "Build a Genai and ML based Akinator for IPL Players",
       category: "Hackathon",
-      link:"https://www.linkedin.com/posts/bismay-kumar_hackathon-gdgranchi-agenticpremierleague-ugcPost-7462900969719296001-8Uy8/"
+      link: "https://www.linkedin.com/posts/bismay-kumar_hackathon-gdgranchi-agenticpremierleague-ugcPost-7462900969719296001-8Uy8/"
     }
   ],
-projects: [
+  projects: [
     {
-      id: "ci-guardian",
-      slug: "ci-guardian",
-      title: "CI Guardian",
-      shortDescription: "AI-powered CI/CD workflow failure detection and real-time triage platform.",
-      description: "A real-time GitHub App that watches workflow runs, downloads multi-job logs when a pipeline fails, extracts stack trace file context, and executes an AI pipeline using LangGraph to surface structured root-cause reports, propose code fixes, and alert developers dynamically.",
-      thumbnail: "/ci-guardian.webp",
-      tech: ["Python", "FastAPI", "React", "PostgreSQL", "LangGraph", "Docker"],
-      liveUrl: "https://ci-guardian-client.vercel.app/dashboard",
-      githubUrl: "https://github.com/its-bismay/ci-guardian-server",
+      id: "codeflow",
+      slug: "codeflow",
+      title: "CodeFlow",
+      shortDescription: "A production-grade, real-time collaborative workspace with voice/video calls and sandboxed microVMs.",
+      description: "A production-grade, real-time collaborative workspace where multiple developers can edit the same files simultaneously with sub-100ms perceived latency, make voice/video calls inside the workspace, and run complex multi-file projects in secure sandboxed microVMs.",
+      thumbnail: "/codeflow.webp",
+      tech: ["React", "Node.js", "MongoDB", "WebRTC", "Yjs", "Socket.IO", "E2B", "Express.js"],
+      liveUrl: "https://code-flow-real-time-collaborative-w.vercel.app/",
+      githubUrl: "https://github.com/its-bismay/CodeFlow--real-time-collaborative-workspace",
       timeline: [
-        { phase: "Architecture Planning", date: "January 2026" },
-        { phase: "Pipeline & SSE Engine Dev", date: "February 2026" },
-        { phase: "Dockerization & Production Deploy", date: "February 2026" }
+        { phase: "Planning & CRDT implementation", date: "June 2026" },
+        { phase: "MicroVM Sandboxing", date: "June 2026" },
+        { phase: "WebRTC & Final Polish", date: "July 2026" }
       ],
       features: [
-        "Real-time Automated Failure Analysis",
-        "Multi-Job Log Parsing & Stack Trace Extraction",
-        "Server-Sent Events (SSE) Live Streams",
-        "Automated Telegram Bot Alerts",
-        "Non-Spamming Pull Request Comments"
+        "Conflict-Free Real-Time Collaboration (CRDTs)",
+        "Stateful Sandbox Execution (E2B microVMs)",
+        "Live Web Server Previews",
+        "Integrated WebRTC Audio/Video Calling",
+        "Enterprise-Grade Authentication"
       ],
       readme: `
-## **CI Guardian**
+# <img src="client/public/favicon.svg" alt="CodeFlow Logo" width="32" align="center" /> CodeFlow
 
-Auto-detect CI/CD failures on GitHub, root-cause them with AI using full repository context, and surface a proposed fix on a real-time dashboard, via Telegram, and as an auto-posted PR comment.
+> **A production-grade, real-time collaborative workspace** where multiple developers can edit the same files simultaneously with sub-100ms perceived latency, make voice/video calls inside the workspace, and run complex multi-file projects in secure sandboxed microVMs.
+
+[![React](https://img.shields.io/badge/React-18.0-blue.svg)](https://reactjs.org/)
+[![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248.svg)](https://www.mongodb.com/)
+[![WebRTC](https://img.shields.io/badge/WebRTC-GetStream-blue.svg)](https://getstream.io/)
+[![Yjs](https://img.shields.io/badge/CRDT-Yjs-orange.svg)](https://docs.yjs.dev/)
 
 ---
 
-- **Automated AI Pipeline:** Intercepts completed run webhooks, processes logs, extracts stack traces, and utilizes LangGraph with OpenRouter LLM gateways for detailed triage.
-- **Real-Time Stream Dashboard:** Delivers pipeline data directly to the user interface using Server-Sent Events (SSE) without needing Redis.
-- **Smart Notification Ecosystem:** Delivers clear root-cause summaries directly to users via a dedicated Telegram Bot channel.
-- **Programmatic PR Management:** Posts and continually updates existing pull request comments on workflow re-runs instead of creating message spam.
-- **Robust Authorization Layer:** Secures client-server communication using cross-domain JWT authentication strings.
+## 🚀 Key Features
+
+* **Conflict-Free Real-Time Collaboration**: Powered by **Yjs (CRDTs)**, enabling simultaneous multi-user code editing. Experience seamless offline synchronization and automatic conflict resolution, complete with custom-colored cursor tracking for active collaborators.
+* **Stateful Sandbox Execution**: Integrated with **E2B's Firecracker microVMs**. Instantly spin up dedicated secure virtual environments. Your entire workspace is synced directly to the sandbox container in real-time.
+* **Live Web Server Previews**: Spin up full web apps inside the sandbox (e.g., a FastAPI backend or a Node.js server). CodeFlow automatically forwards the exposed ports and renders the live application directly in an integrated **Live Preview iframe**.
+* **Integrated WebRTC Audio/Video Calling**: Talk while you type. CodeFlow uses the **GetStream.io WebRTC SDK** to provide seamless in-editor video and voice channels. Features include camera toggling, screen sharing, and mute controls.
+* **Enterprise-Grade Authentication**: Implements robust JWT Access and Refresh token rotation, safely stored in HTTP-Only secure cookies to prevent XSS and CSRF attacks.
+
+---
+
+## 🧠 System Architecture
+
+CodeFlow employs a robust microservice-oriented architecture designed to handle concurrent WebSocket connections and horizontal scaling.
+
+\`\`\`text
+       [ Vercel Frontend ]
+       React + Monaco Editor
+              │   │
+  REST (Axios)│   │WebSocket (Y-Websocket)
+              ▼   ▼
+       [ Render Backend ]
+       Node.js / Express.js
+              │
+  ┌───────────┼───────────┬───────────┐
+  ▼           ▼           ▼           ▼
+MongoDB     Yjs        Socket.IO     E2B
+Atlas       Sync       Pub/Sub       MicroVM
+(Data)      (CRDT)     (Presence)    (Exec)
+\`\`\`
+
+### Why CRDTs over OT?
+We specifically selected **Yjs (Conflict-free Replicated Data Types)** over Operational Transformation (OT) due to its superior handling of peer-to-peer eventual consistency. CRDTs natively manage offline editing forks without requiring a central server to sequence operations, resulting in lower network overhead and flawless merge resolution.
+      `
+    },
+    {
+      id: "researchify",
+      slug: "researchify",
+      title: "AI Research Agent Platform",
+      shortDescription: "A full-stack research automation platform powered by a LangGraph multi-agent pipeline.",
+      description: "A full-stack research automation platform where users authenticate via Google, create research projects, and a LangGraph multi-agent pipeline (powered by Gemini 3.1 Flash-Lite) researches the topic in parallel — collecting web content, images (Unsplash), and videos (YouTube) — then synthesizes a markdown report, uploads it to AWS S3, and delivers it via email (Gmail SMTP) and Telegram. All background work is orchestrated through a Postgres-backed job queue.",
+      thumbnail: "/researchify.webp",
+      tech: ["React", "FastAPI", "Python", "LangGraph", "PostgreSQL", "Google Gemini"],
+      liveUrl: "https://researchify-six.vercel.app",
+      githubUrl: "https://github.com/its-bismay/Researchify",
+      timeline: [
+        { phase: "Architecture & Planning", date: "July 2026" },
+        { phase: "LangGraph Pipeline Dev", date: "August 2026" },
+        { phase: "Frontend & Deployment", date: "August 2026" }
+      ],
+      features: [
+        "LangGraph multi-agent pipeline",
+        "Zero-infrastructure Postgres job queue",
+        "Parallel web, image, and video research",
+        "Automated AWS S3 report generation",
+        "Email and Telegram delivery integrations"
+      ],
+      readme: `
+## **AI Research Agent Platform**
+
+A full-stack research automation platform where users authenticate via Google, create research projects, and a **LangGraph multi-agent pipeline** (powered by **Gemini 3.1 Flash-Lite**) researches the topic in parallel.
+
+---
+
+- **Job Queue (No Redis):** PostgreSQL serves as the job queue using \\\`SELECT ... FOR UPDATE SKIP LOCKED\\\`.
+- **LangGraph Pipeline:** Directed state graph with fan-out/fan-in parallelism for Web, Image, and Video search.
+- **Rate Limiter:** Sliding-window rate limiter at the LLM layer.
+- **Delivery System:** Automated report delivery via Gmail SMTP and Telegram.
+- **Single Service Deployment:** Background worker runs as an \\\`asyncio.Task\\\` inside the FastAPI lifespan.
       `
     },
     {
@@ -188,7 +258,7 @@ A fast, async REST API built with **FastAPI** that fetches and serves LeetCode u
     ],
     education: [
       { degree: "B.Tech in Electrical Engineering", school: "National Institute of Technology, Jamshedpur", period: "2023 - 2027" },
-      {degree: "Higher Secondary Education", school: "Saraswati Vidya Mandir Gatiroutpatna Cuttack", period: "2020 - 2022" }
+      { degree: "Higher Secondary Education", school: "Saraswati Vidya Mandir Gatiroutpatna Cuttack", period: "2020 - 2022" }
     ]
   }
 };
